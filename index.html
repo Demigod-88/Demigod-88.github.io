@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hubert Nkrumah | Data Engineer</title>
+  <meta name="description" content="Data Engineering portfolio featuring automated ETL/ELT pipelines, Microsoft Fabric, Docker containerization, and advanced SQL analytics." />
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Typography: Inter for UI & JetBrains Mono for Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar">
+    <div class="logo">&lt;Hubert /&gt;</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="https://github.com/demigod-88" target="_blank" class="btn-sm">GitHub Profile</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero" id="about">
+    <div class="container">
+      <span class="badge">Data & Analytics Engineering</span>
+      <h1>Building Scalable, Reliable Data Pipelines & Infrastructure.</h1>
+      <p>Data Engineer specializing in end-to-end ELT/ETL pipeline architecture, cloud data platform engineering (Microsoft Fabric), containerized microservices (Docker), and production-grade SQL transformations.</p>
+      
+      <div class="cta-buttons">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="https://github.com/demigod-88" target="_blank" class="btn secondary">GitHub</a>
+        <a href="https://www.linkedin.com" target="_blank" class="btn outline">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- TECHNICAL STACK & COMPETENCIES -->
+  <section class="section container" id="skills">
+    <h2>Technical Stack</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Pipelines & Orchestration</h3>
+        <p>ETL/ELT Architecture, Apache Airflow, Prefect, Docker Containerization, API Ingestion, Task Automation.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Data Warehousing & Cloud</h3>
+        <p>Microsoft Fabric, SQL (T-SQL, PostgreSQL), Data Lakehouse Architecture, Dimensional Data Modeling.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Processing & Analytics</h3>
+        <p>Python (pandas, PySpark), Full-Stack Data Analysis, Process Engineering, Workflow Optimization.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Infrastructure & Security</h3>
+        <p>Linux/Bash Shell, Container Security, System Monitoring, Git CI/CD Workflows, Ethical Hacking Fundamentals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section class="section container" id="projects">
+    <h2>Featured Engineering Projects</h2>
+
+    <!-- Project 1: Containerized ETL Pipeline -->
+    <div class="project-card">
+      <div class="project-content">
+        <span class="tag">Pipeline / Infrastructure</span>
+        <h3>Automated Containerized Data Pipeline</h3>
+        <p>Designed and deployed an automated ingestion and transformation pipeline utilizing Docker containers to extract unstructured payload data, execute schema validation, and load structured tables into a cloud data lakehouse environment.</p>
+
+        <div class="tech-tags">
+          <span>Python</span>
+          <span>Docker</span>
+          <span>Microsoft Fabric</span>
+          <span>PostgreSQL</span>
+          <span>REST API</span>
+        </div>
+
+        <ul class="highlights">
+          <li>Automated daily multi-source ingestion with robust logging and retry mechanisms.</li>
+          <li>Isolated runtime environments using Docker containerization to streamline deployments.</li>
+          <li>Optimized SQL transformations for fast analytical reporting across business domains.</li>
+        </ul>
+
+        <!-- INTERACTIVE PIPELINE VISUALIZER -->
+        <div class="pipeline-widget">
+          <div class="pipeline-header">
+            <div class="pipeline-title">
+              <span class="status-indicator" id="overall-status"></span>
+              <h3>Live Pipeline Execution Simulator</h3>
+            </div>
+            <button class="btn-sm" id="run-pipeline-btn" onclick="triggerPipeline()">Run Simulation</button>
+          </div>
+
+          <div class="pipeline-nodes">
+            <div class="node" id="node-1">
+              <div class="node-icon">📡</div>
+              <div class="node-info">
+                <span class="node-name">API Extract</span>
+                <span class="node-status">Idle</span>
+              </div>
+            </div>
+
+            <div class="connector"></div>
+
+            <div class="node" id="node-2">
+              <div class="node-icon">🛡️</div>
+              <div class="node-info">
+                <span class="node-name">Schema Validation</span>
+                <span class="node-status">Idle</span>
+              </div>
+            </div>
+
+            <div class="connector"></div>
+
+            <div class="node" id="node-3">
+              <div class="node-icon">⚡</div>
+              <div class="node-info">
+                <span class="node-name">PySpark Transform</span>
+                <span class="node-status">Idle</span>
+              </div>
+            </div>
+
+            <div class="connector"></div>
+
+            <div class="node" id="node-4">
+              <div class="node-icon">☁️</div>
+              <div class="node-info">
+                <span class="node-name">Fabric Lakehouse</span>
+                <span class="node-status">Idle</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COPYABLE CODE BLOCK -->
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-title">pipeline_orchestrator.py</span>
+            <button class="copy-btn" onclick="copyCode(this)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre><code><span class="keyword">def</span> <span class="func">run_etl_pipeline</span>():
+    <span class="comment"># Extract raw API telemetry payload</span>
+    payload = extract_source_data(endpoint=<span class="string">"/api/v1/telemetry"</span>)
+    
+    <span class="comment"># Validate schema and transform attributes</span>
+    cleaned_df = transform_payload(payload)
+    
+    <span class="comment"># Load to Gold Lakehouse Table</span>
+    load_to_lakehouse(cleaned_df, target=<span class="string">"fabric_gold_analytics"</span>)
+    <span class="keyword">return</span> <span class="string">"SUCCESS"</span></code></pre>
+        </div>
+
+        <div class="project-links">
+          <a href="https://github.com/demigod-88" target="_blank">View Repository on GitHub &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS & CREDENTIALS -->
+  <section class="section container" id="certifications">
+    <h2>Certifications & Professional Credentials</h2>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <span class="cert-issuer">Microsoft</span>
+        <h3>Fabric Data Engineer Associate</h3>
+      </div>
+      <div class="cert-card">
+        <span class="cert-issuer">Google</span>
+        <h3>Advanced Data Analytics Professional</h3>
+      </div>
+      <div class="cert-card">
+        <span class="cert-issuer">EC-Council</span>
+        <h3>Certified Ethical Hacker (CEH)</h3>
+      </div>
+      <div class="cert-card">
+        <span class="cert-issuer">Google</span>
+        <h3>Cybersecurity Professional</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; 2026 Hubert Lewellyn Nkrumah. Designed for GitHub Pages with pure HTML, CSS & Vanilla JS.</p>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+  <script>
+    // COPY CODE FUNCTIONALITY
+    function copyCode(button) {
+      const codeText = button.closest('.code-block').querySelector('code').innerText;
+      
+      navigator.clipboard.writeText(codeText).then(() => {
+        const span = button.querySelector('span');
+        const originalText = span.innerText;
+        
+        span.innerText = 'Copied!';
+        button.style.borderColor = '#4ade80';
+        button.style.color = '#4ade80';
+        
+        setTimeout(() => {
+          span.innerText = originalText;
+          button.style.borderColor = '';
+          button.style.color = '';
+        }, 2000);
+      });
+    }
+
+    // PIPELINE SIMULATION LOGIC
+    async function triggerPipeline() {
+      const btn = document.getElementById('run-pipeline-btn');
+      const globalIndicator = document.getElementById('overall-status');
+      btn.disabled = true;
+      btn.innerText = 'Running...';
+      globalIndicator.className = 'status-indicator';
+
+      const nodes = [
+        { id: 'node-1', name: 'API Extract' },
+        { id: 'node-2', name: 'Schema Validation' },
+        { id: 'node-3', name: 'PySpark Transform' },
+        { id: 'node-4', name: 'Fabric Lakehouse' }
+      ];
+
+      // Reset all nodes to queued
+      nodes.forEach((n, idx) => {
+        const el = document.getElementById(n.id);
+        el.className = 'node';
+        el.querySelector('.node-status').innerText = 'Queued';
+        if (idx < nodes.length - 1) {
+          el.nextElementSibling.classList.remove('active');
+        }
+      });
+
+      // Step through nodes sequentially
+      for (let i = 0; i < nodes.length; i++) {
+        const nodeEl = document.getElementById(nodes[i].id);
+        
+        nodeEl.classList.add('running');
+        nodeEl.querySelector('.node-status').innerText = 'Processing...';
+        
+        await new Promise(res => setTimeout(res, 750)); // Simulating work delay
+
+        nodeEl.classList.remove('running');
+        nodeEl.classList.add('success');
+        nodeEl.querySelector('.node-status').innerText = '200 OK';
+
+        if (i < nodes.length - 1) {
+          nodeEl.nextElementSibling.classList.add('active');
+        }
+      }
+
+      globalIndicator.classList.add('active');
+      btn.innerText = 'Run Again';
+      btn.disabled = false;
+    }
+  </script>
+</body>
+</html>
